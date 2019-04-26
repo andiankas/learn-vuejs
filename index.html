@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="index.css">
+		<script src="lib/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<h1>{{ 'Pesan : ' + message }}</h1>
+			<p>{{text}}</p>
+		</div>
+
+		<div id="vm">
+			<h1>{{name}}</h1>
+			<p>{{age}}</p>
+			<p>{{gender}}</p>
+			<p>{{hobby}}</p>
+			<p>{{children}}</p>
+		</div>
+		<!-- Vue -->
+		<script>
+			var app = new Vue({
+				data: {
+					message: 'Hello World Vue',
+					text: 'Selamat Pagi Jakarta'
+				}
+			});
+			app.$mount('#app');
+
+			var vm = new Vue({
+				el: '#vm',
+				data: {
+					name: 'Hafid', // string
+					age: 33, // integer
+					gender: true, // boolean (Pria)
+					hobby: ['coding','sleeping'], // array
+					children: {
+						1: 'Ammar',
+						2: 'Faqih',
+						3: 'Syamil'
+					} // object
+				}
+			});
+
+		</script>
+		<!-- end vue -->
+	</body>
+</html>
